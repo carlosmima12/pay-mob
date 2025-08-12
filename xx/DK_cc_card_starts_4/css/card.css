@@ -1,0 +1,211 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Example of a media query for responsiveness */
+@media only screen and (max-width: 700px) {
+    html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+}
+.input-icon-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.card-icon {
+position: absolute;
+  right: 10px;
+  width: 33px;
+  height: auto;
+  top: 31px;
+}
+
+.u-input {
+    padding-right: 40px;
+}
+
+
+.clogos {
+  margin-top: 10px; /* Adjust space between input field and logos */
+  /* Align to the left under the input */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cblogos {
+  width: auto; /* Adjust as needed */
+  height: 18px; /* Adjust as needed, maintain aspect ratio */
+}
+
+
+/* Include this in your CSS file or within a <style> tag in your <head> */
+.u-form-group-row {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px; /* You can adjust this as needed */
+  height: auto;
+}
+
+.u-input-2, .u-input-3 {
+  padding-right: 40px; /* Make room for the icon */
+}
+
+
+
+@media (max-width: 600px) {
+  .u-form-group-row {
+      display: flex;
+  justify-content: space-between;
+
+  margin-right: 30px;
+  margin-left: 30px;
+  }
+}
+
+
+
+
+
+
+ .u-section-1 {
+  background-image: none;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 1016px;
+}
+
+.u-section-1 .u-group-1 {
+  width: 480px;
+  height: auto;
+  --radius: 20px;
+  min-height: 462px;
+  box-shadow: 0px 0px 8px 0px rgba(128,128,128,0.2);
+  margin: 0 auto 60px;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding: 50px 50px 30px;
+}
+
+.u-section-1 .u-form-1 {
+  height: 302px;
+  width: 380px;
+  margin: 0 auto;
+}
+
+.u-section-1 .u-label-1 {
+  font-family: regu;
+  font-size: 0.875rem;
+}
+
+.u-section-1 .u-input-1 {
+  --radius: 6px;
+  height: 40px;
+  font-family: regu;
+  font-size: 0.875rem;
+}
+
+.u-section-1 .u-form-group-2 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-2 {
+  font-family: regu;
+  font-size: 0.875rem;
+}
+
+.u-section-1 .u-input-2 {
+  font-family: regu;
+  font-size: 0.875rem;
+  height: 40px;
+  --radius: 6px;
+}
+
+.u-section-1 .u-form-group-3 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-3 {
+  font-family: regu;
+  font-size: 0.875rem;
+}
+
+.u-section-1 .u-input-3 {
+  font-family: regu;
+  font-size: 0.875rem;
+  height: 40px;
+  --radius: 6px;
+}
+
+.u-section-1 .u-btn-1 {
+  --radius: 50px;
+  font-family: Text-Bold-Web;
+  background-image: none;
+  font-size: 1rem;
+  padding: 11px 30px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-group-1 {
+    height: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-container-layout-1 {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 685px;
+  }
+
+  .u-section-1 .u-group-1 {
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding: 30px 0;
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 280px;
+  }
+}@font-face {
+  font-family: 'regu';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/regu.woff2);
+}@font-face {
+  font-family: 'Text-Bold-Web';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Text-Bold-Web.woff2);
+}
